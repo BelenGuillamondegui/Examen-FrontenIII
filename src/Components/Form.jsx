@@ -3,12 +3,20 @@ import Card from './Card'
 const Form = () => {
   return (
     <div>
-        <form action="">
+        <form>
+          <label> Nombre </label>
+          {/* <input type="text" value={user.nombre}onChange /> */}
 
-
-       <h1> <Card nombre={"Belen"}/></h1>
+          <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
 
         </form>
+        <h1> <Card nombre={"Belen"}/></h1>
+
     </div>
   )
 }
