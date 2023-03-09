@@ -1,12 +1,15 @@
 import "./App.css";
 import React, { useState } from "react";
-import Card from "./Components/Card";
+import Card from "./Components/Card"
+import "./Components/Form.css"
+
+
 function App() {
   const [user, setUser] = useState({
     nombre: "",
-    obraSocial: "",
-    email: "",
-    medico: "",
+    comidaFavorita: "",
+    animalFavorito: "",
+    colorFavorito: "",
   });
 
   const [show, setShow] = useState(false);
@@ -14,7 +17,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (user.nombre.length > 8 && user.medico !== "") {
+    if (user.nombre.length > 3 && user.comidaFavorita.length > 6 && user.colorFavorito !== "") {
       setShow(true);
       setErr(false);
     } else {
@@ -25,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Carga de estudiantes</h1>
+      <h1 className="titulo">Mi información</h1>
       <form onSubmit={handleSubmit}>
         <label>Nombre completo</label>
         <input
@@ -33,32 +36,34 @@ function App() {
           value={user.nombre}
           onChange={(e) => setUser({ ...user, nombre: e.target.value })}
         />
-        <label>Obra social</label>
+        <label>Comida favorita</label>
         <input
           type="text"
-          value={user.obraSocial}
-          onChange={(e) => setUser({ ...user, obraSocial: e.target.value })}
+          value={user.comidaFavorita}
+          onChange={(e) => setUser({ ...user, comidaFavorita: e.target.value })}
         />
-        <label>Email</label>
+        <label>Animal favorito</label>
         <input
-          type="email"
-          value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
+          type="text"
+          value={user.animalFavorito}
+          onChange={(e) => setUser({ ...user, animalFavorito: e.target.value })}
         />
 
         <select
-          value={user.medico}
-          onChange={(e) => setUser({ ...user, medico: e.target.value })}
+          value={user.colorFavorito}
+          onChange={(e) => setUser({ ...user, colorFavorito: e.target.value })}
         >
-          <option value="">Seleccione una respuesta</option>
-          <option value="Dermatologo">Dermatólogo</option>
-          <option value="Otorrinolaringologo">Otorrinolaringólogo</option>
-          <option value="Cardiologo">Cardiólogo</option>
+          <option value="">Seleccione un color</option>
+          <option value="Rojo">Rojo</option>
+          <option value="Azul">Azul</option>
+          <option value="Amarillo">Amarillo</option>
         </select>
         <button>Enviar</button>
       </form>
-      {err ? "No ha colocado la información correcta" : null}
-      {show && <Card nombre={user.nombre} medico={user.medico} />}
+      <h3 className="error">
+      {err && "Por favor chequea que la información sea correcta"}
+      </h3>
+      {show && <Card user={user} />}
     </div>
   );
 }

@@ -1,0 +1,18 @@
+.card{
+    width: 400px;
+    flex-direction: row;
+    border: 3px solid beige;
+    background-color: rgb(108, 108, 108);
+    margin-bottom: 10px;
+    margin-left: 300px;
+    border-radius: 10px;
+    text-align: left;
+
+}
+
+.card-tit{
+    color: lightseagreen;
+    text-align: center;
+    text-decoration: underline;
+}
+

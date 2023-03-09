@@ -1,14 +1,16 @@
 import React from 'react'
+import "./Card.css"
 
-const Card = ({nombre, medico}) => {
-  const date = new Date()
-  const dia = date.getDate()
-  const mes = date.getMonth()
+const Card = ({user}) => {
 
 return (
-  <div>
-       <h3>{nombre} Tenes turno con el {medico}</h3>
-       <h3>Para el día {dia+7}/{mes+1} a las 16:00 hs</h3>
+  <div className='card'>
+     
+       <h2 className='card-tit'>Los gustos de {user.nombre} son: </h2>
+       <h3>Comida favorita: {user.comidaFavorita}</h3>
+       <h3>Animal favorito: {user.animalFavorito}</h3>
+       <h3>Color favorito: {user.colorFavorito}</h3>
+  
   </div>
 )
 }

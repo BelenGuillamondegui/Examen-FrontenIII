@@ -3,7 +3,11 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: lightgrey;
+  border-radius: 10px;
+  
 }
+
 
 .logo {
   height: 6em;

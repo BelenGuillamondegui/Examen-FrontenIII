@@ -1,0 +1,9 @@
+.titulo{
+    color:lightseagreen;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.error{
+    color:red
+}
